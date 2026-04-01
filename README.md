@@ -30,14 +30,20 @@ Named after Anson MacDonald — the pen name Robert A. Heinlein used to publish 
 
 ## Usage
 
-Clone Anson into the `skills/` directory of the project where your AI assistant runs:
+**Claude Code / any project:**
 
 ```bash
 cd /path/to/your/project
 git clone https://github.com/superpositionhq/anson.git skills/anson
 ```
 
-Then ask your agent to run it. Anson will guide you through the rest.
+**OpenClaw:**
+
+```bash
+git clone https://github.com/superpositionhq/anson.git ~/.openclaw/workspace/skills/anson
+```
+
+Then tell your agent: **"Run anson"** — it will guide you through the rest.
 
 ## License
 
