@@ -30,7 +30,14 @@ Named after Anson MacDonald — the pen name Robert A. Heinlein used to publish 
 
 ## Usage
 
-Install the skill into your project's `skills/` directory and invoke it. Anson will guide you through the rest.
+Clone Anson into the `skills/` directory of the project where your AI assistant runs:
+
+```bash
+cd /path/to/your/project
+git clone https://github.com/superpositionhq/anson.git skills/anson
+```
+
+Then ask your agent to run it. Anson will guide you through the rest.
 
 ## License
 
