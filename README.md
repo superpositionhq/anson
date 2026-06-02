@@ -8,7 +8,7 @@ Anson v1 wrote your identity docs. **v2 installs the whole coworker**: identity 
 
 ## What you get
 
-- **Identity** — `AGENTS.md`, `IDENTITY.md`, `USER.md`, `SOUL.md`, `MEMORY.md` written from your answers, not templates
+- **Identity** — `IDENTITY.md`, `USER.md`, `SOUL.md` built by interview, not templates: anson runs a short meta-interview to learn the *shape* of each doc, generates a dedicated maker skill with `skill-creator`, then runs that maker to do the real interview. You're left with `AGENTS.md`, `KEY_PEOPLE.md`, `MEMORY.md` **and four living maker skills** (`identity-maker`, `user-maker`, `soul-maker`, `agents-maker`) that keep those docs current as you work
 - **Integrations** — Gmail, Google Calendar, Slack, Notion, Granola (macOS), iMessage (macOS) — authenticated, verified, and wired into your agent's tool surface
 - **Rhythm** — morning brief, standup notes, evening wrap-up, weekly digests — whichever you ask for, scheduled and running
 - **Two-way Slack coworker (optional)** — DM the agent from your phone, get replies in thread
@@ -55,7 +55,7 @@ The flow is conversational, not a checklist — but at a high level:
 | Stage | What happens | What gets written |
 |---|---|---|
 | **A** | Anson introduces itself, picks workspace root | `<workspace>/ANSON_META.md` |
-| **B** | Who are you? (identity interview before any tools) | `USER.md`, `IDENTITY.md`, `SOUL.md`, `KEY_PEOPLE.md`, `MEMORY.md` skeleton |
+| **B** | Who are you? Meta-interview → generate a maker skill → run it, for each of identity / user / soul (before any tools) | `IDENTITY.md`, `USER.md`, `SOUL.md`, `KEY_PEOPLE.md`, `MEMORY.md` skeleton + `identity-maker`, `user-maker`, `soul-maker`, `agents-maker` skills |
 | **C** | How do you work? (open-ended workflow discovery) | workflow summary in `ANSON_META.md` |
 | **D** | Anson proposes the install plan based on Stage C, then executes only what your workflow needs | `.env`, verified integrations, installed skills, scheduled tasks, optional Slack bridge |
 | **E** | Any custom workflows? Describe in plain English; anson generates a skill, dry-runs it, installs it | custom skills (≤5 per session) |
@@ -79,4 +79,4 @@ MIT.
 
 ## Credits
 
-Successor to [anson v1](https://github.com/superpositionhq/anson) by Superposition. The v1 identity-interview approach is preserved as Stage B; v2 absorbs everything around it.
+Successor to [anson v1](https://github.com/superpositionhq/anson) by Superposition. v1's generative maker-skill loop — meta-interview, generate a maker with `skill-creator`, run it, and leave the living maker skills behind — is restored as Stage B; v2 absorbs everything around it (integrations, scheduled rhythms, Slack bridge, custom workflows).

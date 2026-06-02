@@ -44,36 +44,23 @@ The flow is conversational and user-centric. Don't march through "Phase 1: conne
 
 ---
 
-## Stage B — Who are you?
+## Stage B — Who are you? (identity, user, soul)
 
-This is the identity interview. Anson v1's whole job, now Stage B of v2.
+This is the heart of anson — the generative maker-skill loop, restored from v1. Anson does **not** fill in static identity templates. For each of the three identity documents it:
 
-**B.1 Profile basics** (USER.md):
-- Name + preferred name + pronouns
-- Timezone + location
-- Role + company (if applicable)
+1. Runs a short **meta interview** to learn the *shape* that document should take for this user
+2. Uses **`skill-creator`** — the "greater skill" — to *generate a dedicated maker skill*
+3. *Runs that maker skill* to conduct the real interview and write the document
 
-**B.2 Working style:**
-- "How do you like updates? Terse one-liners, or full context?"
-- "When you ask me to draft something, should it sound like *you* would write it, or like a polished assistant version?"
-- "What costs you energy? What do you want to protect time for?"
+What's left behind is not just `IDENTITY.md` / `USER.md` / `SOUL.md` but four living maker skills — `identity-maker`, `user-maker`, `soul-maker`, `agents-maker` — installed in `<workspace>/skills/`, which maintain those documents in Update mode for the life of the workspace.
 
-**B.3 Key people** (KEY_PEOPLE.md):
-- "Who are the 3–5 people I should never miss when they reach out?"
-- For each: name, relationship, contact handle
+**Prerequisite:** `skill-creator` must be available — the `anthropic-skills:skill-creator` plugin skill (invoke via the Skill tool), or a local `skills/skill-creator/`. The loop depends on it. If it's missing, stop and give the user the install command before continuing. Do **not** fall back to filling templates.
 
-**B.4 Agent persona** (IDENTITY.md):
-- "What should I be called?"
-- "What's my role to you — chief of staff, research assistant, coding partner, all of the above?"
-- "Anything I must never do?"
+**The full orchestration lives in [references/bootstrap-process.md](references/bootstrap-process.md).** Follow it from **B:1** through **B:14**. Don't narrate the internal machinery — from the user's side this is one continuous conversation about who you are, who they are, and what you're like together. They never hear "meta interview" or "generating a skill."
 
-**B.5 Voice + relationship** (SOUL.md):
-- "What earns trust with you? What loses it?"
-- "Anything specific about how I should sound when drafting *as* you? (Common: 'no em dashes', 'no exclamations', 'no consultant-speak')"
+That process also writes the two v2-specific documents directly (no maker skill needed for these): `KEY_PEOPLE.md` (master contacts list) and the `MEMORY.md` skeleton — and renders `CLAUDE.md` (pointer) + the `AGENTS.md` base, which Stage D fills further as integrations come online.
 
-**B.6 Write all 5 files** (USER, IDENTITY, SOUL, KEY_PEOPLE, MEMORY skeleton) by filling the templates in `scaffolds/` from the answers. Render `CLAUDE.md` (pointer) + `AGENTS.md` (will be filled more in Stage D as integrations come online).
-
-Checkpoint Stage B in `ANSON_META.md`.
+Checkpoint Stage B in `ANSON_META.md` (the bootstrap-process tracks sub-steps `B:1`–`B:14` within it).
 
 ---
 
@@ -181,8 +168,10 @@ Leave `ANSON_META.md` as the durable install log.
 
 | File | When used |
 |---|---|
-| `scaffolds/CLAUDE.md.tmpl` + `AGENTS.md.tmpl` | Stage B.6 |
-| `scaffolds/IDENTITY.md.tmpl` / `USER.md.tmpl` / `SOUL.md.tmpl` / `MEMORY.md.tmpl` / `KEY_PEOPLE.md.tmpl` | Stage B.6 |
+| `references/bootstrap-process.md` | Stage B — the generative maker-skill loop (B:1–B:14) |
+| `scaffolds/creators/` (creator-skill-template, `*-creator-instructions`, `*-prefill`) | Stage B — inputs to generating identity/user/soul/agents makers |
+| `scaffolds/CLAUDE.md.tmpl` + `AGENTS.md.tmpl` | Stage B:11 (render base; AGENTS.md filled further in Stage D) |
+| `scaffolds/KEY_PEOPLE.md.tmpl` / `MEMORY.md.tmpl` | Stage B:11 (v2 docs — direct fill, no maker) |
 | `scaffolds/env.tmpl` | Stage D (per integration) |
 | `scaffolds/ANSON_META.md.tmpl` | Stage A.5 |
 | `scaffolds/skills/note-management/` | Stage D step 1 (always) |
