@@ -1,4 +1,4 @@
-# Anson v2
+# Anson
 
 **Opinionated coworker setup for Claude Code · Slack · Notion · Gmail · Granola.**
 
