@@ -32,4 +32,4 @@ Lists today's events.
 
 ## Multiple calendars per account
 
-If you've got separate Work / Personal / Travel calendars within one account, list them in the `AGENTS.md` calendar table during Stage B.6 — skills consult that table.
+If you've got separate Work / Personal / Travel calendars within one account, list them in the `AGENTS.md` calendar table when the calendar integration is wired in Stage D — skills consult that table.
